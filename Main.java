@@ -56,14 +56,6 @@ class Main
 
     System.out.printf("From %d to %d, the average atmospheric CO₂ levels across the globe has grown %.2f ppm.",
             years[0], years[years.length - 1], co2LevelDifference);
-
-    //Explanation of oil drum units
-    System.out.println("\nData displayed for each year begins at 360 ppm.\nEach additional oil drum (🛢 ) represents an additional 10 ppm.\n");
-
-    //Column titles of graph
-    System.out.print("Year");
-    UtilityBelt.printCentered(55,"CO₂ in Atmosphere (ppm)");
-
   }
 
   //STATIC METHODS
