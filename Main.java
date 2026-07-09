@@ -68,6 +68,12 @@ class Main
 
   //STATIC METHODS
 
+  /**
+  * Prints a bar displaying the amount of CO2 in a given year.
+  *
+  * @param data The amount of CO2 to display
+  * @param year the year to display
+   **/
   static void printBar(double data, int year) {
     int barCount = (int)data - 360;
     System.out.printf("%d: ", year);
@@ -76,7 +82,12 @@ class Main
     }
     System.out.printf(" %.2f%n", data);
   }
-
+  /**
+   * Creates a graph that displays multiple years and their CO2 levels.
+   *
+   * @param data array containing CO2 data to display
+   * @param years array containing years corresponding to CO2 data
+   * **/
   static void printGraph(double[] data, int[] years) {
     for (int i = 0; i < years.length; i++) {
       printBar(data[i], years[i]);
