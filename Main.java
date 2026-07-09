@@ -32,16 +32,31 @@ class Main
 
   public static void main(String[] args) 
   {
-		// DECLARATION SECTION
+    // DECLARATION SECTION
+    double[] co2Levels;
+    int[] years = new int[20];
+    double co2LevelDifference;
 
-		// INITIALIZATION SECTION
+    // INITIALIZATION SECTION
+    co2Levels = new double[] {
+            371.32, 373.45, 375.98, 377.7, 379.98, 382.09, 384.03, 385.03, 387.64, 390.1,
+            391.85, 394.06, 396.74, 398.87, 401.01, 404.41, 406.76, 408.72, 411.66, 414.24
+    };
 
-		// INPUT SECTION 
+    for(int i = 0; i < years.length; i++)
+    {
+      years[i] = 2001 + i;
+    }
 
-		// PROCESSING SECTION
+    co2LevelDifference = co2Levels[co2Levels.length - 1] - co2Levels[0];
 
-		// OUTPUT SECTION
-  
+    // OUTPUT SECTION
+    printGraph(co2Levels, years);
+
+
+    System.out.printf("From %d to %d, the average atmospheric CO₂ levels across the globe has grown %f ppm.",
+            years[0], years[years.length - 1], co2LevelDifference);
+
     //Explanation of oil drum units
     System.out.println("\nData displayed for each year begins at 360 ppm.\nEach additional oil drum (🛢 ) represents an additional 10 ppm.\n");
 
@@ -49,6 +64,23 @@ class Main
     System.out.print("Year");
     UtilityBelt.printCentered(55,"CO₂ in Atmosphere (ppm)");
 
+  }
+
+  //STATIC METHODS
+
+  static void printBar(double data, int year) {
+    int barCount = (int)data - 360;
+    System.out.printf("%d: ", year);
+    for (int i = 0; i < barCount; i++) {
+      System.out.print("\uD83D\uDEE2");
+    }
+    System.out.printf(" %.2f%n", data);
+  }
+
+  static void printGraph(double[] data, int[] years) {
+    for (int i = 0; i < years.length; i++) {
+      printBar(data[i], years[i]);
+    }
   }
 
 }
