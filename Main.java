@@ -54,7 +54,7 @@ class Main
     printGraph(co2Levels, years);
 
 
-    System.out.printf("From %d to %d, the average atmospheric CO₂ levels across the globe has grown %f ppm.",
+    System.out.printf("From %d to %d, the average atmospheric CO₂ levels across the globe has grown %.2f ppm.",
             years[0], years[years.length - 1], co2LevelDifference);
 
     //Explanation of oil drum units
